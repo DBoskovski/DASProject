@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+
+@if (!string.IsNullOrEmpty(Model.StockData) && Model.StockData.Contains("Error"))
+{
+    <p style="color: red;">@Model.StockData</p>
+}
+
+<form method="post">
+    <label for="symbol">Select a Stock:</label>
+    <select id="symbol" name="symbol" @(Model.Companies.Count == 0 ? "disabled" : "")>
+        @foreach (var company in Model.Companies)
+        {
+            <option value="@company.Symbol">@company.Name (@company.Symbol)</option>
+        }
+    </select>
+    <button type="submit" @(Model.Companies.Count == 0 ? "disabled" : "")>Get Data</button>
+</form>
+
+@if (Model.ProcessedStockPrices != null && Model.ProcessedStockPrices.Any())
+{
+    <h3>Processed Stock Prices for (@Model.SelectedSymbol)</h3>
+    <ul>
+        @foreach (var price in Model.ProcessedStockPrices)
+        {
+            <li>@price.Time: @price.ClosePrice</li>
+        }
+    </ul>
+
+    <h3>Price Trend</h3>
+    <p>@Model.PriceTrend</p>
+}
