@@ -19,14 +19,81 @@
 
 @if (Model.ProcessedStockPrices != null && Model.ProcessedStockPrices.Any())
 {
-    <h3>Processed Stock Prices for (@Model.SelectedSymbol)</h3>
-    <ul>
-        @foreach (var price in Model.ProcessedStockPrices)
-        {
-            <li>@price.Time: @price.ClosePrice</li>
-        }
-    </ul>
+    <h3>Stock Price Chart for (@Model.SelectedSymbol)</h3>
+    
+    <!-- Container for the chart -->
+    <div id="chart-container">
+        <svg width="600" height="400"></svg>
+    </div>
 
     <h3>Price Trend</h3>
     <p>@Model.PriceTrend</p>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const stockPrices = @Html.Raw(Json.Serialize(Model.ProcessedStockPrices));
+            console.log("Stock Prices:", stockPrices);
+
+                if (!stockPrices || stockPrices.length === 0) {
+                console.log("No data available.");
+                return;
+                }
+
+            stockPrices.forEach(d => {
+                d.Time = new Date(d.time);
+                d.ClosePrice = parseFloat(d.closePrice);
+            });
+            
+            const margin = { top: 20, right: 30, bottom: 50, left: 50 },
+                  width = 600 - margin.left - margin.right,
+                  height = 400 - margin.top - margin.bottom;
+
+            const svg = d3.select("svg")
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform", `translate(${margin.left},${margin.top})`);
+
+            const x = d3.scaleTime()
+                .domain(d3.extent(stockPrices, d => d.Time))
+                .range([0, width]);
+
+            const y = d3.scaleLinear()
+                .domain([d3.min(stockPrices, d => d.ClosePrice) * 0.95, d3.max(stockPrices, d => d.ClosePrice) * 1.05])
+                .range([height, 0]);
+
+            const line = d3.line()
+                .x(d => x(d.Time))
+                .y(d => y(d.ClosePrice))
+                .curve(d3.curveMonotoneX);
+
+            svg.append("g")
+                .attr("transform", `translate(0,${height})`)
+                .call(d3.axisBottom(x).ticks(5));
+
+            svg.append("g")
+                .call(d3.axisLeft(y));
+
+            svg.append("path")
+                .datum(stockPrices)
+                .attr("fill", "none")
+                .attr("stroke", "steelblue")
+                .attr("stroke-width", 2)
+                .attr("d", line);
+
+            svg.selectAll("circle")
+                .data(stockPrices)
+                .enter().append("circle")
+                .attr("cx", d => {console.log("X Position:", x(d.Time));
+            return x(d.Time);})
+                .attr("cy", d => {console.log("Y Position:", y(d.ClosePrice));
+            return y(d.ClosePrice);})
+                .attr("r", 4)
+                .attr("fill", "red")
+                .append("title")
+                .text(function(d) { return d.Time.toLocaleString() + ": " + d.ClosePrice; });
+
+        });
+    </script>
 }
