@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "80IgVE1MPF0=",
+  "dgSpecHash": "ZpDzkEI39vM=",
   "success": true,
   "projectFilePath": "C:\\Users\\David\\Desktop\\Ucenje\\Projects\\Proekt\\196119\\196119\\196119.csproj",
   "expectedPackageFiles": [
@@ -34,9 +34,11 @@
     "C:\\Users\\David\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\9.0.2\\microsoft.extensions.options.configurationextensions.9.0.2.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\microsoft.extensions.primitives\\9.0.2\\microsoft.extensions.primitives.9.0.2.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\npgsql\\9.0.3\\npgsql.9.0.3.nupkg.sha512",
+    "C:\\Users\\David\\.nuget\\packages\\system.configuration.configurationmanager\\9.0.3\\system.configuration.configurationmanager.9.0.3.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.2\\system.diagnostics.diagnosticsource.9.0.2.nupkg.sha512",
-    "C:\\Users\\David\\.nuget\\packages\\system.diagnostics.eventlog\\9.0.2\\system.diagnostics.eventlog.9.0.2.nupkg.sha512",
+    "C:\\Users\\David\\.nuget\\packages\\system.diagnostics.eventlog\\9.0.3\\system.diagnostics.eventlog.9.0.3.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\system.io.pipelines\\9.0.2\\system.io.pipelines.9.0.2.nupkg.sha512",
+    "C:\\Users\\David\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.3\\system.security.cryptography.protecteddata.9.0.3.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\system.text.encodings.web\\9.0.2\\system.text.encodings.web.9.0.2.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\system.text.json\\9.0.2\\system.text.json.9.0.2.nupkg.sha512"
   ],

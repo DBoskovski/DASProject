@@ -5,6 +5,7 @@ using System.Net.Http;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Npgsql;
 using System.Data;
+using Microsoft.Extensions.Configuration;
 
 public class IndexModel : PageModel
 {
@@ -13,6 +14,17 @@ public class IndexModel : PageModel
     public string? StockData { get; set; }
     public List<StockPrice>? ProcessedStockPrices { get; set; }
     public string? PriceTrend { get; set; }
+    private readonly IConfiguration _configuration;
+    private readonly string _connectionString;
+
+    public IndexModel(IConfiguration configuration)
+    {
+        _configuration = configuration;
+        var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+        _connectionString = environment == "Development"
+            ? _configuration.GetConnectionString("PostgresDB") ?? throw new ArgumentNullException("PostgresDB connection string is null")
+            : _configuration.GetConnectionString("DockerPostgresDB") ?? throw new ArgumentNullException("DockerPostgresDB connection string is null");
+    }
 
     public void OnGet()
     {
@@ -41,7 +53,10 @@ public class IndexModel : PageModel
             }
 
             ProcessStockData();
-            SaveProcessedStockData(ProcessedStockPrices);
+            if (ProcessedStockPrices != null && ProcessedStockPrices.Any())
+            {
+                SaveProcessedStockData(ProcessedStockPrices);
+            }
             OnGet();
         }
         catch (HttpRequestException ex)
@@ -62,7 +77,9 @@ public class IndexModel : PageModel
             {
                 Time = DateTime.ParseExact(entry.Name, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture),
                 ClosePrice = decimal.Parse(entry.Value.GetProperty("4. close").GetString()!, CultureInfo.InvariantCulture),
-                Symbol = SelectedSymbol
+                Symbol = SelectedSymbol ?? string.Empty,
+                MovingAverage = 0,
+                Trend = string.Empty
             })
             .OrderBy(sp => sp.Time)
             .ToList();
@@ -74,8 +91,8 @@ public class IndexModel : PageModel
 
             foreach (var stock in ProcessedStockPrices)
             {
-                stock.MovingAverage = movingAverage; // Assign moving average
-                stock.Trend = trend; // Assign trend
+                stock.MovingAverage = movingAverage;
+                stock.Trend = trend;
             }
             PriceTrend = trend;
         }
@@ -85,13 +102,10 @@ public class IndexModel : PageModel
     {
         if (processedStocks == null || !processedStocks.Any())
             return;
-        
-        var connectionString = new ConfigurationBuilder()
-        .AddJsonFile("appsettings.json")
-        .Build()
-        .GetConnectionString("PostgresDB");
 
-        using var connection = new NpgsqlConnection(connectionString);
+        Console.WriteLine($"Using connection string: {_connectionString}");
+
+        using var connection = new NpgsqlConnection(_connectionString);
         connection.Open();
 
         foreach (var stock in processedStocks)
@@ -101,11 +115,11 @@ public class IndexModel : PageModel
             "VALUES (@symbol, @timestamp, @close_price, @moving_average, @trend) " +
             "ON CONFLICT (symbol, timestamp) DO NOTHING", connection);
 
-            command.Parameters.AddWithValue("symbol", stock.Symbol);
+            command.Parameters.AddWithValue("symbol", stock.Symbol ?? string.Empty);
             command.Parameters.AddWithValue("timestamp", stock.Time);
             command.Parameters.AddWithValue("close_price", stock.ClosePrice);
             command.Parameters.AddWithValue("moving_average", stock.MovingAverage);
-            command.Parameters.AddWithValue("trend", stock.Trend);
+            command.Parameters.AddWithValue("trend", stock.Trend ?? string.Empty);
 
             command.ExecuteNonQuery();
         }

@@ -1,0 +1,33 @@
+services:
+  web:
+    build: .
+    ports:
+      - "7079:7079"
+    volumes:
+      - dataprotection-keys:/app/keys
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_URLS=http://*:7079
+      - ConnectionStrings__PostgresDB=Host=db;Port=5432;Database=proekt;Username=postgres;Password=0806
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: proekt
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 0806  # Must match your connection string
+      POSTGRES_HOST_AUTH_METHOD: trust  # Temporary for testing
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d proekt"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+  dataprotection-keys:

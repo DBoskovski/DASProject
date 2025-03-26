@@ -1,16 +1,18 @@
-Kafka фолдерот внатре во него во во 2 различни cmd-а ги пуштаме наредните команди
-1. .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
-за активација на zookeeper
-2. .\bin\windows\kafka-server-start.bat .\config\server.properties
-за активација на kafka
+1. docker-compose up --build					- за да се направат сликите за DOCKER, јас работев со DOCKER DESKTOP.
 
-потоа внатре во \bin\windows kafka фолдерот ги пуштаме командите
-1.kafka-topics.bat --create --bootstrap-server localhost:9092 --topic stockprices
-за креирање на topic stockprices
-2.kafka-topics.bat --create --bootstrap-server localhost:9092 --topic processedstockprices
-за креирање на topic processedstockprices
-3.kafka-console-producer.bat --bootstrap-server localhost:9092 --topic stockprices 
-за пуштање на stockprices како producer
-4.kafka-console-consumer.bat --topic processedstockprices --bootstrap-server localhost:9092 --from-beginning
-за пуштање на processedstockprices како consumer
+
+2. docker-compose exec db psql -U postgres -d proekt
+
+CREATE TABLE processed_stock_prices (
+    symbol VARCHAR(10) NOT NULL,
+    timestamp TIMESTAMP NOT NULL,
+    close_price DECIMAL NOT NULL,
+    moving_average DECIMAL NOT NULL,
+    trend VARCHAR(20) NOT NULL,
+    PRIMARY KEY (symbol, timestamp)
+);
+\q								- првиот пат има потреба од креирање на табелата затоа што во сликата ја нема табелата и потоа се е 
+								  како што и во самата слика си се чуваат сите податоци.
+
+
 
