@@ -1,0 +1,133 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\David\\Desktop\\DASProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6D9FCE51-046B-4D57-943F-80639B1FF1A5}|196119\\196119.csproj|c:\\users\\david\\desktop\\dasproject\\196119\\init-db.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{6D9FCE51-046B-4D57-943F-80639B1FF1A5}|196119\\196119.csproj|solutionrelative:196119\\init-db.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D9FCE51-046B-4D57-943F-80639B1FF1A5}|196119\\196119.csproj|c:\\users\\david\\desktop\\dasproject\\196119\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D9FCE51-046B-4D57-943F-80639B1FF1A5}|196119\\196119.csproj|solutionrelative:196119\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D9FCE51-046B-4D57-943F-80639B1FF1A5}|196119\\196119.csproj|c:\\users\\david\\desktop\\dasproject\\196119\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{6D9FCE51-046B-4D57-943F-80639B1FF1A5}|196119\\196119.csproj|solutionrelative:196119\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D9FCE51-046B-4D57-943F-80639B1FF1A5}|196119\\196119.csproj|c:\\users\\david\\desktop\\dasproject\\196119\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6D9FCE51-046B-4D57-943F-80639B1FF1A5}|196119\\196119.csproj|solutionrelative:196119\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D9FCE51-046B-4D57-943F-80639B1FF1A5}|196119\\196119.csproj|c:\\users\\david\\desktop\\dasproject\\196119\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D9FCE51-046B-4D57-943F-80639B1FF1A5}|196119\\196119.csproj|solutionrelative:196119\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D9FCE51-046B-4D57-943F-80639B1FF1A5}|196119\\196119.csproj|c:\\users\\david\\desktop\\dasproject\\196119\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6D9FCE51-046B-4D57-943F-80639B1FF1A5}|196119\\196119.csproj|solutionrelative:196119\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D9FCE51-046B-4D57-943F-80639B1FF1A5}|196119\\196119.csproj|c:\\users\\david\\desktop\\dasproject\\196119\\init-db.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
+      "RelativeMoniker": "D:0:0:{6D9FCE51-046B-4D57-943F-80639B1FF1A5}|196119\\196119.csproj|solutionrelative:196119\\init-db.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "init-db.sql ",
+              "DocumentMoniker": "C:\\Users\\David\\Desktop\\DASProject\\196119\\init-db.sql",
+              "RelativeDocumentMoniker": "196119\\init-db.sql",
+              "ToolTip": "C:\\Users\\David\\Desktop\\DASProject\\196119\\init-db.sql",
+              "RelativeToolTip": "196119\\init-db.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-03-27T15:49:57.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\David\\Desktop\\DASProject\\196119\\Program.cs",
+              "RelativeDocumentMoniker": "196119\\Program.cs",
+              "ToolTip": "C:\\Users\\David\\Desktop\\DASProject\\196119\\Program.cs",
+              "RelativeToolTip": "196119\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T07:58:41.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\David\\Desktop\\DASProject\\196119\\docker-compose.yml",
+              "RelativeDocumentMoniker": "196119\\docker-compose.yml",
+              "ToolTip": "C:\\Users\\David\\Desktop\\DASProject\\196119\\docker-compose.yml",
+              "RelativeToolTip": "196119\\docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-03-27T09:04:20.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\David\\Desktop\\DASProject\\196119\\appsettings.json",
+              "RelativeDocumentMoniker": "196119\\appsettings.json",
+              "ToolTip": "C:\\Users\\David\\Desktop\\DASProject\\196119\\appsettings.json",
+              "RelativeToolTip": "196119\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAB3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-27T08:02:39.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\David\\Desktop\\DASProject\\196119\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "196119\\Pages\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\David\\Desktop\\DASProject\\196119\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "196119\\Pages\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T07:38:40.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\David\\Desktop\\DASProject\\196119\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "196119\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\David\\Desktop\\DASProject\\196119\\Pages\\Index.cshtml",
+              "RelativeToolTip": "196119\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-27T07:38:33.475Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

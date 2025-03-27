@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS processed_stock_prices (
+CREATE TABLE processed_stock_prices (
     symbol VARCHAR(10) NOT NULL,
     timestamp TIMESTAMP NOT NULL,
     close_price DECIMAL NOT NULL,

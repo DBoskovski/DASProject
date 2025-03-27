@@ -3,11 +3,16 @@ using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+var keyPath = Path.Combine(
+    Environment.GetEnvironmentVariable("HOME") ?? "D:\\home", "data", "keys");
+
 builder.Services.AddDataProtection()
-    .PersistKeysToFileSystem(new DirectoryInfo("/app/keys"))
+    .PersistKeysToFileSystem(new DirectoryInfo(keyPath))
     .SetApplicationName("StockApp");
 
-builder.WebHost.ConfigureKestrel(serverOptions => {
+builder.WebHost.ConfigureKestrel(serverOptions =>
+{
     serverOptions.ListenAnyIP(7079);
 });
 builder.WebHost.UseUrls("http://*:7079");
@@ -16,11 +21,15 @@ builder.Services.AddRazorPages();
 builder.Services.AddHttpClient();
 
 var app = builder.Build();
+
 app.MapGet("/testdb", async (IConfiguration config) =>
 {
     try
     {
-        using var conn = new NpgsqlConnection(config.GetConnectionString("PostgresDB"));
+        var connStr = config.GetConnectionString("PostgresDB")
+              ?? Environment.GetEnvironmentVariable("PostgresDB");
+
+        using var conn = new NpgsqlConnection(connStr);
         await conn.OpenAsync();
         return Results.Ok("Database connection successful!");
     }
@@ -29,6 +38,7 @@ app.MapGet("/testdb", async (IConfiguration config) =>
         return Results.Problem($"Database connection failed: {ex.Message}");
     }
 });
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();

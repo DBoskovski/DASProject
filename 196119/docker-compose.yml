@@ -18,8 +18,8 @@ services:
     environment:
       POSTGRES_DB: proekt
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 0806  # Must match your connection string
-      POSTGRES_HOST_AUTH_METHOD: trust  # Temporary for testing
+      POSTGRES_PASSWORD: 0806
+      POSTGRES_HOST_AUTH_METHOD: trust
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:

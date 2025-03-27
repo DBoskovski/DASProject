@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\David\\Desktop\\Ucenje\\Projects\\Proekt\\196119\\196119\\196119.csproj": {}
+    "C:\\Users\\David\\Desktop\\DASProject\\196119\\196119.csproj": {}
   },
   "projects": {
-    "C:\\Users\\David\\Desktop\\Ucenje\\Projects\\Proekt\\196119\\196119\\196119.csproj": {
+    "C:\\Users\\David\\Desktop\\DASProject\\196119\\196119.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\David\\Desktop\\Ucenje\\Projects\\Proekt\\196119\\196119\\196119.csproj",
+        "projectUniqueName": "C:\\Users\\David\\Desktop\\DASProject\\196119\\196119.csproj",
         "projectName": "196119",
-        "projectPath": "C:\\Users\\David\\Desktop\\Ucenje\\Projects\\Proekt\\196119\\196119\\196119.csproj",
+        "projectPath": "C:\\Users\\David\\Desktop\\DASProject\\196119\\196119.csproj",
         "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\David\\Desktop\\Ucenje\\Projects\\Proekt\\196119\\196119\\obj\\",
+        "outputPath": "C:\\Users\\David\\Desktop\\DASProject\\196119\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

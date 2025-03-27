@@ -20,10 +20,11 @@ public class IndexModel : PageModel
     public IndexModel(IConfiguration configuration)
     {
         _configuration = configuration;
-        var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
-        _connectionString = environment == "Development"
-            ? _configuration.GetConnectionString("PostgresDB") ?? throw new ArgumentNullException("PostgresDB connection string is null")
-            : _configuration.GetConnectionString("DockerPostgresDB") ?? throw new ArgumentNullException("DockerPostgresDB connection string is null");
+
+        _connectionString =
+            configuration.GetConnectionString("PostgresDB") ??
+            Environment.GetEnvironmentVariable("PostgresDB") ??
+            throw new InvalidOperationException("Connection string 'PostgresDB' not found.");
     }
 
     public void OnGet()

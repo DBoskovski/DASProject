@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZpDzkEI39vM=",
+  "dgSpecHash": "RyXGtUb/7pM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\David\\Desktop\\Ucenje\\Projects\\Proekt\\196119\\196119\\196119.csproj",
+  "projectFilePath": "C:\\Users\\David\\Desktop\\DASProject\\196119\\196119.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\David\\.nuget\\packages\\confluent.kafka\\2.8.0\\confluent.kafka.2.8.0.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\librdkafka.redist\\2.8.0\\librdkafka.redist.2.8.0.nupkg.sha512",
